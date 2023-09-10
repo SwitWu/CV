@@ -1,0 +1,122 @@
+\documentclass[10pt,a4paper,academicons]{altacv}
+
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[super]{nth}
+
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=1cm}
+
+\setmainfont{Inter}
+
+\hypersetup{colorlinks,linkcolor={cyan},citecolor={cyan},urlcolor={cyan}}
+
+\definecolor{Vivid}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Vivid}
+\colorlet{accent}{Vivid}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\newcommand{\googlescholar}[1]{\printinfo{\faGraduationCap}{#1}}
+\newcommand{\stackoverflow}[1]{\printinfo{\faStackOverflow}{#1}}
+\newcommand{\stackexchange}[1]{\printinfo{\faStackExchange}{#1}}
+\newcommand{\home}[1]{\printinfo{\faHome}{#1}}
+
+\DeclareNameAlias{author}{given-family}
+
+\addbibresource{main.bib}
+
+\AtEveryBibitem{\clearfield{pages}} 
+
+\makeatletter
+\def\mblx@yearfrom{-1000}
+\def\mblx@yearto{3000}
+
+\newrobustcmd*{\setcheckfromtorange}[2]{%
+  \def\mblx@yearfrom{#1}%
+  \def\mblx@yearto{#2}%
+}
+
+\defbibcheck{fromto}{%
+  \iffieldint{year}
+    {\ifnumless{\thefield{year}}{\mblx@yearfrom}
+       {\skipentry}
+       {\ifnumgreater{\thefield{year}}{\mblx@yearto}
+          {\skipentry}
+          {}}}
+    {\skipentry}}
+\makeatother
+
+\newif\ifpublic{}
+
+\publictrue{}
+%\publicfalse{}
+
+\begin{document}
+
+\name{Siyu Wu}
+\tagline{Love Math and Technique}
+\personalinfo{%
+  \email{\href{mailto:sywumath@gmail.com}{sywumath@gmail.com}}
+  \location{Wuhan, Hubei Province, China}
+  \homepage{\href{https://switwu.github.io}{Personal Page}}
+  % \googlescholar{\href{https://scholar.google.com/citations?user=i2LNBfUAAAAJ}{Santiago Castro}}
+  \github{\href{https://github.com/switwu}{Github}}
+  % \twitter{\href{https://twitter.com/bryant1410}{bryant1410}}
+  % \linkedin{\href{https://linkedin.com/in/santiagocastroserra}{santiagocastroserra}}
+  % \stackoverflow{\href{https://stackoverflow.com/users/1165181/bryant1410}{bryant1410}}
+  \stackexchange{\href{https://stackexchange.com/users/21523548/siyu-wu}{Stack Exchange}}
+}
+
+\begin{fullwidth}
+
+\makecvheader{}
+
+\end{fullwidth}
+
+I'm a mathematics stident who is always curious about new techniques
+and tools.
+
+\cvsection[page1sidebar]{Education}
+
+\cvevent{Bachelor's Degree in Pure Mathematics}{Wuhan University}{Sept. 2017 --- June. 2020}{Wuhan, Hubei Province}
+
+\begin{itemize}
+  \item In this period I had learnt many foundamental courses as well as computer programming related courses (such as machine learning, data structures and algorithm).
+  \item I have learnt \TeX~and~\LaTeX~from this time.
+    Based on this, I collated the exercise answers of  
+    several books (functional analysis, algebra) and typeset them into PDF which are
+    now accessible on my personal page.
+\end{itemize}
+
+\divider{}
+
+\cvevent{Master's Degree in Pure Mathematics}{Wuhan University}{Sept. 2020 --- June 2023}{Wuhan, Hubei Province}
+
+\begin{itemize}
+  \item Advisor: \href{https://scholar.google.es/citations?user=KUH-_KIAAAAJ&hl=en}{Ao Weiwei}
+  \item My research field is paraboilic and elliptic PDE.
+    During extracurriculum time, I have learnt several skills such as
+    Git, JavaScript.
+\end{itemize}
+
+\cvsection{Publications}
+
+\href{https://scholar.google.com/citations?user=i2LNBfUAAAAJ}{523 citations and h-index 11 in Google Scholar.}
+
+\cvsection{Programs}
+
+\begin{itemize}
+  \item Member of the \href{https://github.com/whutug}{WHU \TeX~User Group},
+    participating in the development of thesis template of Wuha University (unofficial).
+  \item A small tool: \href{https://title-case.github.io/}{Convert
+    the String to Title Case},
+    which is mainly used to process an arbitrary string and then strip
+    useless characters at both ends, convert the string to title case.
+\end{itemize}
+
+(Resume last update: \today)
+
+\end{document}
