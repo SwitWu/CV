@@ -1,9 +1,17 @@
-# Resume of Santiago Castro
+# Curriculum Vitae
 
 To compile:
 
 ```bash
 latexmk main.tex
+```
+or
+```bash
+xelatex main.tex
+```
+or
+```bash
+lualatex main.tex
 ```
 
 ## License
